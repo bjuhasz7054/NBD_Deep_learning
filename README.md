@@ -1,6 +1,8 @@
 # NBD_Deep_learning: Recognizing facial features
 Members of the team: Domonkos Debreczeni, Nándor Szécsényi, Benedek Juhász
-##Aims and goals of our project
+
+
+Aims and goals of our project
 Just to be clear, our project's topic is the 3rd from the list, "Recognizing facial features" and all of our goals and ideas are inspired by the topic's official description. 
 
 Given our team's average experience, in this semester we chose a (for us) new approach, which involves working in the latent space. Let us clarify what we mean by looking at a possible schedule for this semester:
