@@ -21,7 +21,7 @@ For the second milestone, we experimented with multiple models and training tech
 -	we preprocessed and loaded the training data using the ImageDatagenerator class and its flow_from_dataframe method, which suits our label files perfectly
 -	using a VGG network that was pre-trained on faces, we used transfer learning to create our models and began training them
 -	we evaluated our models with multiple metrics, including precision, recall and for better visual understandability, confusion matrices
--	an AutoEncoder network has been implemented (using the trained classifier network as the encoder) to further analyze the properties of our dataset and the transmission between two classes in the latent space
+-	an AutoEncoder network has been implemented (using the trained classifier network as the encoder) to further analyze the properties of our dataset and the transmission between two classes in the latent space: an example animation (ae_lin_pol_0_9.mp4) shows how the decoded picture changes when interpolating between two samples in the latent space. 
 
 It is worth mentioning that until now, two model architectures have achieved the best classification results. The two models differ from each other only in their final layers:
 -	the first is a multilabel model that has one output layer, producing an 18x1 vector
