@@ -1,7 +1,8 @@
-from typing import Tuple
-import pandas as pd
 import configparser
 import logging
+from typing import Tuple
+
+import pandas as pd
 
 
 class DataLoader:

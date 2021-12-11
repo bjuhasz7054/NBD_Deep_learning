@@ -1,6 +1,7 @@
 #  """Encode categorical data to one-hot representation"""
-from data_loader import DataLoader
 import pandas as pd
+
+from data_loader import DataLoader
 
 
 class DataEncoder:

@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 gdown = "~=4.2"
+imgaug = "~=0.4"
 pandas = "~=1.3"
 tensorflow = "~=2.7"
 
