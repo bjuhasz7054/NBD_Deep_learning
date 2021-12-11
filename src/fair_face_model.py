@@ -1,4 +1,6 @@
 import configparser
+import time
+import os
 from src.data_process.data_loader import DataLoader
 from src.data_process.data_generator import DataGenerator
 from keras_vggface.vggface import VGGFace
@@ -16,6 +18,7 @@ from keras import backend as K
 from sklearn.utils import class_weight
 import pandas as pd
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+import logging
 
 
 class FairFaceModel:
@@ -27,6 +30,7 @@ class FairFaceModel:
         )
         self.epochs = int(config.get("main", "epochs"))
         self.patience = int(config.get("main", "patience"))
+        self.logger = logging.get_logger(__name__)
 
     def build(self):
         vgg_features = VGGFace(
@@ -81,10 +85,20 @@ class FairFaceModel:
             loss={"age": loss_age, "race": loss_race, "gender": loss_gender},
         )
 
-    def train(self, data_generator: DataGenerator, data_loader: DataLoader):
+    def train(
+        self,
+        data_generator: DataGenerator,
+        data_loader: DataLoader,
+        results_dir: str = "results",
+    ):
+        if not os.path.exists(results_dir):
+            self.logger.info(f"creating folder {results_dir}")
+            os.makedirs(results_dir)
+
         early_stopping = EarlyStopping(patience=self.patience, verbose=1)
+        result_path = os.path.join(results_dir, f"{int(time.time())}.hdf5")
         checkpointer = ModelCheckpoint(
-            filepath="/content/drive/MyDrive/figures/final_model.hdf5",
+            filepath=result_path,
             save_best_only=True,
             verbose=1,
         )
