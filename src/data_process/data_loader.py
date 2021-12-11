@@ -1,5 +1,6 @@
 import configparser
 import logging
+import os
 from typing import Tuple
 
 import pandas as pd
@@ -9,11 +10,11 @@ class DataLoader:
     def __init__(
         self, config: configparser.ConfigParser, dataset_folder: str = "dataset"
     ):
-        self.train_test_split_ratio = config.get(
-            "main", "train_test_split_ratio"
+        self.train_test_split_ratio = float(
+            config.get("main", "train_test_split_ratio")
         )
-        self.decrease_ratio = config.get("main", "decrease_ratio")
-        self.random_seed = config.get("main", "random_seed")
+        self.decrease_ratio = float(config.get("main", "decrease_ratio"))
+        self.random_seed = int(config.get("main", "random_seed"))
         self.dataset_folder = dataset_folder
         self.logger = logging.getLogger(__name__)
 
@@ -30,11 +31,15 @@ class DataLoader:
         Load labels from csv into dataframes
         """
         initial_train_dataset, _ = self._split_dataframe(
-            base_dataframe=pd.read_csv("fairface_label_train.csv"),
+            base_dataframe=pd.read_csv(
+                os.path.join(self.dataset_folder, "labels_train.csv")
+            ),
             fraction=self.decrease_ratio,
         )
         self.validate_labels_df, _ = self._split_dataframe(
-            base_dataframe=pd.read_csv("fairface_label_val.csv"),
+            base_dataframe=pd.read_csv(
+                os.path.join(self.dataset_folder, "labels_validate.csv")
+            ),
             fraction=self.decrease_ratio,
         )
         self.train_labels_df, self.test_labels_df = self._split_dataframe(

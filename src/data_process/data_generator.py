@@ -4,15 +4,17 @@ import random
 
 from keras.preprocessing.image import ImageDataGenerator
 
-from data_encoder import DataEncoder
-from jpeg_compressor import jpeg_compress
+from src.data_process.data_encoder import DataEncoder
+from src.data_process.jpeg_compressor import jpeg_compress
 
 
 class DataGenerator:
     def __init__(self, config: configparser.ConfigParser):
-        self.random_seed = config.get("main", "random_seed")
-        self.train_batch_size = config.get("main", "train_batch_size")
-        self.validate_batch_size = config.get("main", "validate_batch_size")
+        self.random_seed = int(config.get("main", "random_seed"))
+        self.train_batch_size = int(config.get("main", "train_batch_size"))
+        self.validate_batch_size = int(
+            config.get("main", "validate_batch_size")
+        )
 
         self.train_generator: ImageDataGenerator
         self.test_generator: ImageDataGenerator
