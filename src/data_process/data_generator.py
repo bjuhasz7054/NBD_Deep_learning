@@ -20,7 +20,9 @@ class DataGenerator:
         self.test_generator: ImageDataGenerator
         self.validate_generator: ImageDataGenerator
 
-    def create_data_generators(self, data_encoder: DataEncoder):
+    def create_data_generators(
+        self, data_encoder: DataEncoder, dataset_folder: str = "dataset"
+    ):
         train_datagen = ImageDataGenerator(
             rotation_range=random.randint(40, 90),
             width_shift_range=0.2,
@@ -43,6 +45,7 @@ class DataGenerator:
             "seed": self.random_seed,
             "target_size": (224, 224),
             "validate_filenames": True,
+            "directory": dataset_folder,
         }
 
         self.train_generator = train_datagen.flow_from_dataframe(
