@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "63d0c5e01388359156e88a0d53222c607e80d00b6cd7b5a2fd07503a77f4746e"
+            "sha256": "4b5ec0c82e2f34857fffcbde0e5350b19b20f7e1a6f6fad04a2c084d6aeff31b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -250,6 +250,14 @@
             ],
             "version": "==2.7.0"
         },
+        "keras-applications": {
+            "hashes": [
+                "sha256:5579f9a12bcde9748f4a12233925a59b93b73ae6947409ff34aa2ba258189fe5",
+                "sha256:df4323692b8c1174af821bf906f1e442e63fa7589bf0f1230a0b6bdc5a810c95"
+            ],
+            "index": "pypi",
+            "version": "==1.0.8"
+        },
         "keras-preprocessing": {
             "hashes": [
                 "sha256:7b82029b130ff61cc99b55f3bd27427df4838576838c5b2f65940e4fcec99a7b",
@@ -258,8 +266,9 @@
             "version": "==1.1.2"
         },
         "keras-vggface": {
-            "git": "https://github.com/rcmalli/keras-vggface.git",
-            "ref": "719ad75625fe51436b9a9479114b3d136847e11a"
+            "editable": true,
+            "git": "https://github.com/vmarichkav/keras-vggface.git",
+            "ref": "504059b4cfa56f147105c997c536938afa49ce09"
         },
         "kiwisolver": {
             "hashes": [

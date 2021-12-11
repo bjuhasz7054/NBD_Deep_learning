@@ -21,9 +21,7 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 class FairFaceModel:
     def __init__(self, config: configparser.ConfigParser):
         self.learning_rate = float(config.get("main", "learning_rate"))
-        self.train_size = int(config.get("main", "train_size"))
         self.train_batch_size = int(config.get("main", "train_batch_size"))
-        self.validate_size = int(config.get("main", "validate_size"))
         self.validate_batch_size = int(
             config.get("main", "validate_batch_size")
         )
@@ -83,7 +81,7 @@ class FairFaceModel:
             loss={"age": loss_age, "race": loss_race, "gender": loss_gender},
         )
 
-    def train(self, data_generator: DataGenerator):
+    def train(self, data_generator: DataGenerator, data_loader: DataLoader):
         early_stopping = EarlyStopping(patience=self.patience, verbose=1)
         checkpointer = ModelCheckpoint(
             filepath="/content/drive/MyDrive/figures/final_model.hdf5",
@@ -93,9 +91,10 @@ class FairFaceModel:
 
         self.model.fit(
             data_generator.train_generator,
-            steps_per_epoch=self.train_size / self.train_batch_size,
+            steps_per_epoch=data_loader.train_size / self.train_batch_size,
             validation_data=data_generator.validate_generator,
-            validation_steps=self.validate_size / self.validate_batch_size,
+            validation_steps=data_loader.validate_size
+            / self.validate_batch_size,
             epochs=self.epochs,
             callbacks=(early_stopping, checkpointer),
         )
