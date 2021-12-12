@@ -177,7 +177,7 @@ class Evaluator:
             handles=scatter.legend_elements()[0],
             labels=classes,
             loc="upper left",
-            title="Osztályok",
+            title="Classes",
             bbox_to_anchor=(1.04, 1),
         )
         ax.add_artist(legend1)
