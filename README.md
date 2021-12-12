@@ -1,7 +1,8 @@
 # NBD FairFace Project
 
 Classifier CNN for recognizing facial features from the fairface dataset and latent space examination.
-If you want to know more abou the project read the [project description](project_description.md).
+If you want to know more about the project read the [project description](project_description.md).
+Members of the team: Domonkos Debreczeni - Q69B8U, Benedek Juhász - A2PMXC, Nándor Szécsényi - RJ448X
 
 ## Docker
 ```bash
@@ -83,3 +84,5 @@ Update after adding new package to Pipfile
 ```bash
 pipenv update --dev
 ```
+## Other files
+There are two extra Jupyter notebooks, these are meant for visualization and other extras, such as showing the latent vector space analysis. Running these notebooks is fairly simple, just use the usual notebook controls or the "Select all" command in the Runtime menu (don't forget to change the runtime type to GPU). Also before running you need to download the model file and move it to your drive.
