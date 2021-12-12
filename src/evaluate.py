@@ -148,6 +148,7 @@ class Evaluator:
 
     @staticmethod
     def plot_tsne(x, y, classes, with_pictures=False, name="figure.eps"):
+        name = os.path.join(self.results_folder, name)
         colors = np.asarray(plt.rcParams["axes.prop_cycle"].by_key()["color"])
         cmap, norm = matplotlib.colors.from_levels_and_colors(
             np.arange(0, 9 + 2), colors[: 9 + 1]
@@ -192,4 +193,3 @@ class Evaluator:
                 ax.add_artist(imagebox)
 
         plt.savefig(name, format="pdf", bbox_inches="tight", dpi=300)
-        plt.show()
