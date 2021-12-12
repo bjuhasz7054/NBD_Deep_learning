@@ -2,13 +2,13 @@ import argparse
 import configparser
 import pathlib
 
+from keras.models import load_model
+
 from src.data_process.data_encoder import DataEncoder
 from src.data_process.data_generator import DataGenerator
 from src.data_process.data_loader import DataLoader
 from src.evaluate import Evaluator
 from src.fair_face_model import FairFaceModel
-from keras.models import load_model
-
 
 config = configparser.ConfigParser()
 config.read("config.ini")

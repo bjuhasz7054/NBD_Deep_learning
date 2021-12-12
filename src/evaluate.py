@@ -96,7 +96,11 @@ class Evaluator:
         )
 
     def classification_report(self):
-        with open(os.path.join(self.results_folder, "classification_report.txt"),'w',encoding = 'utf-8') as f:
+        with open(
+            os.path.join(self.results_folder, "classification_report.txt"),
+            "w",
+            encoding="utf-8",
+        ) as f:
             f.write("Age Classification Report\n")
             f.write(
                 classification_report(
