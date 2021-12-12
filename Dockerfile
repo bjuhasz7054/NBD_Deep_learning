@@ -1,4 +1,4 @@
-FROM python:3.8.12-slim-buster
+FROM tensorflow/tensorflow:2.7.0-gpu
 
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
