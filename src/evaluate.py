@@ -135,24 +135,23 @@ class Evaluator:
             encoder.predict(self.test_generator),
             self.int_test_labels_df["age"],
             classes=self.AGE_LABELS,
-            name="age_tsne.pdf",
+            name=os.path.join(self.results_folder, "age_tsne.pdf")
         )
         self.plot_tsne(
             encoder.predict(self.test_generator),
             self.int_test_labels_df["race"],
             classes=self.RACE_LABELS,
-            name="race_tsne.pdf",
+            name=os.path.join(self.results_folder, "race_tsne.pdf")
         )
         self.plot_tsne(
             encoder.predict(self.test_generator),
             self.int_test_labels_df["gender"],
             classes=self.GENDER_LABELS,
-            name="gender_tsne.pdf",
+            name=os.path.join(self.results_folder, "gender_tsne.pdf")
         )
 
     @staticmethod
     def plot_tsne(x, y, classes, with_pictures=False, name="figure.pdf"):
-        name = os.path.join(self.results_folder, name)
         colors = np.asarray(plt.rcParams["axes.prop_cycle"].by_key()["color"])
         cmap, norm = matplotlib.colors.from_levels_and_colors(
             np.arange(0, 9 + 2), colors[: 9 + 1]
