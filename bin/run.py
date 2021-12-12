@@ -115,6 +115,10 @@ if __name__ == "__main__":
             results_dir=args.results_folder,
         )
     elif args.run_type == "evaluate":
+        if not args.load_model:
+            raise ValueError(
+                "model path has to be provided with -l when evaluating"
+            )
         evaluate(
             model_path=args.load_model,
             dataset_folder=args.dataset_folder,

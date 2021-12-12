@@ -25,7 +25,7 @@ export PYTHONPATH=$(pwd)
 ```
 
 
-### Config
+#### Config
 You can tune configuration in `config.ini`.
 Batch sizes might need to be decreased depending on the availible memory.
 
