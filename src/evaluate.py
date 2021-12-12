@@ -151,7 +151,7 @@ class Evaluator:
         )
 
     @staticmethod
-    def plot_tsne(x, y, classes, with_pictures=False, name="figure.eps"):
+    def plot_tsne(x, y, classes, with_pictures=False, name="figure.pdf"):
         name = os.path.join(self.results_folder, name)
         colors = np.asarray(plt.rcParams["axes.prop_cycle"].by_key()["color"])
         cmap, norm = matplotlib.colors.from_levels_and_colors(
