@@ -9,8 +9,10 @@ imgaug = "~=0.4"
 # package is not maintained, so we have to import an open pull request that fixes the package
 keras_vggface = {editable = true, ref = "504059b4cfa56f147105c997c536938afa49ce09", git = "https://github.com/vmarichkav/keras-vggface.git"}
 keras-applications = "1.0" # unhandled dependency of keras_vggface
+matplotlib = "~=3.5"
 pandas = "~=1.3"
 scikit-learn = "~=1.0"
+seaborn = "~=0.11"
 tensorflow = "~=2.7"
 
 [dev-packages]
