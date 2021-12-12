@@ -2,7 +2,7 @@
 
 Classifier CNN for recognizing facial features from the fairface dataset and latent space examination.
 If you want to know more about the project read the [project description](project_description.md).
-Members of the team: Domonkos Debreczeni - Q69B8U, Benedek Juhász - A2PMXC, Nándor Szécsényi - RJ448X
+Members of the team: Domonkos Debreczeni (BSc Final Year) - Q69B8U, Benedek Juhász - A2PMXC, Nándor Szécsényi (BSc Final Year) - RJ448X
 
 ## Docker
 ```bash
