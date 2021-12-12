@@ -84,5 +84,7 @@ Update after adding new package to Pipfile
 ```bash
 pipenv update --dev
 ```
+## Saved model
+A saved model file can be found and downloaded from here: https://drive.google.com/file/d/1kDAue82VnDygPI_YwHV2TKRR8XRJGcaj/view?usp=sharing
 ## Other files
 There are two extra Jupyter notebooks, these are meant for visualization and other extras, such as showing the latent vector space analysis. Running these notebooks is fairly simple, just use the usual notebook controls or the "Select all" command in the Runtime menu (don't forget to change the runtime type to GPU). Also before running you need to download the model file and testing pictures(media folder).
