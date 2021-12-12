@@ -88,7 +88,7 @@ class Evaluator:
         plt.figure(figsize=(13, 10))
         ax = sns.heatmap(conf, annot=True, fmt="d", cmap="Blues")
         ax.set(xlabel="Gender Predicted Label", ylabel="Gender True label")
-        ax.set_title("Race Confusion Matrix")
+        ax.set_title("Gender Confusion Matrix")
         ax.xaxis.set_ticklabels(self.GENDER_LABELS)
         ax.yaxis.set_ticklabels(self.GENDER_LABELS)
         plt.savefig(
