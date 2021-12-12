@@ -30,7 +30,7 @@ class FairFaceModel:
         )
         self.epochs = int(config.get("main", "epochs"))
         self.patience = int(config.get("main", "patience"))
-        self.logger = logging.get_logger(__name__)
+        self.logger = logging.getLogger(__name__)
 
     def build(self):
         vgg_features = VGGFace(

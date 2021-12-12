@@ -13,9 +13,9 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY ./src ./src
+COPY ./bin ./bin
 COPY ./Pipfile .
 COPY ./Pipfile.lock .
-COPY train.py .
 COPY config.ini .
 
 RUN pipenv install --system --deploy --ignore-pipfile --clear
