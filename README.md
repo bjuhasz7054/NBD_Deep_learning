@@ -24,6 +24,11 @@ Have the folder root in your PYTHONPATH (not needed in docker)
 export PYTHONPATH=$(pwd)
 ```
 
+
+### Config
+You can tune configuration in `config.ini`.
+Batch sizes might need to be decreased depending on the availible memory.
+
 #### Collect Dataset
 ```bash
 python bin/collect_dataset.py
