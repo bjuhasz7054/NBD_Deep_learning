@@ -1,24 +1,23 @@
 import configparser
-import time
+import logging
 import os
-from src.data_process.data_loader import DataLoader
-from src.data_process.data_generator import DataGenerator
-from keras_vggface.vggface import VGGFace
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Dense, Dropout
-from tensorflow.keras.metrics import (
-    CategoricalAccuracy,
-    BinaryAccuracy,
-    Accuracy,
-)
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.losses import BinaryCrossentropy
+import time
+
+import pandas as pd
 import tensorflow as tf
 from keras import backend as K
+from keras_vggface.vggface import VGGFace
 from sklearn.utils import class_weight
-import pandas as pd
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-import logging
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.losses import BinaryCrossentropy
+from tensorflow.keras.metrics import (Accuracy, BinaryAccuracy,
+                                      CategoricalAccuracy)
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adam
+
+from src.data_process.data_generator import DataGenerator
+from src.data_process.data_loader import DataLoader
 
 
 class FairFaceModel:

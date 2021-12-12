@@ -1,10 +1,12 @@
-import configparser
-from src.fair_face_model import FairFaceModel
-from src.data_process.data_generator import DataGenerator
-from src.data_process.data_encoder import DataEncoder
-from src.data_process.data_loader import DataLoader
 import argparse
+import configparser
 import pathlib
+
+from src.data_process.data_encoder import DataEncoder
+from src.data_process.data_generator import DataGenerator
+from src.data_process.data_loader import DataLoader
+from src.evaluator import Evaluator
+from src.fair_face_model import FairFaceModel
 
 
 def train(

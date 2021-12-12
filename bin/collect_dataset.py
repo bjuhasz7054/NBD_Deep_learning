@@ -1,7 +1,7 @@
-import pathlib
 import argparse
-from src.data_process.data_collector import DataCollector
+import pathlib
 
+from src.data_process.data_collector import DataCollector
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Collect FairFace dataset")
