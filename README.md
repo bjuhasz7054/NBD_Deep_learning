@@ -85,4 +85,4 @@ Update after adding new package to Pipfile
 pipenv update --dev
 ```
 ## Other files
-There are two extra Jupyter notebooks, these are meant for visualization and other extras, such as showing the latent vector space analysis. Running these notebooks is fairly simple, just use the usual notebook controls or the "Select all" command in the Runtime menu (don't forget to change the runtime type to GPU). Also before running you need to download the model file and move it to your drive.
+There are two extra Jupyter notebooks, these are meant for visualization and other extras, such as showing the latent vector space analysis. Running these notebooks is fairly simple, just use the usual notebook controls or the "Select all" command in the Runtime menu (don't forget to change the runtime type to GPU). Also before running you need to download the model file and testing pictures.
