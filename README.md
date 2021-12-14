@@ -1,3 +1,7 @@
+You can find our videos here, there are three parts:
+- Introduction: https://bmeedu-my.sharepoint.com/:v:/g/personal/bjuhasz7054_edu_bme_hu/EQ5Hjoy1oANFozV3Qkk0poMBvuHGC26dakP1ra2TLygPQA?e=9eOC3w
+- Training and deployment: https://drive.google.com/file/d/1zUjeXfiZe5dRTFd67_0nMNJqtxcks2Sg/view?usp=sharing
+- Latent space analysis: https://bmeedu-my.sharepoint.com/:v:/g/personal/nandor_szecsenyi_edu_bme_hu/EeicZB0VDsZEmJEhe7LdxikBt90UwQaSjh-sFXt1t7gfBg?e=XnE97f
 # NBD FairFace Project
 
 Classifier CNN for recognizing facial features from the fairface dataset and latent space examination.
